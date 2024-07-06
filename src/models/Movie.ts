@@ -10,3 +10,7 @@ export interface Movie {
   photoWidth: number;
   photoHeight: number;
 }
+
+import {Movie as MovieDetail} from 'schema-dts';
+
+export {MovieDetail};

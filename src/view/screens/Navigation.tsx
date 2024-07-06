@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './HomeScreen';
 import MovieStore from '../../stores/MovieStore';
 import SearchStore from '../../stores/SearchStore';
+import MovieDetailScreen from './MovieDetailScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,15 @@ export default class Navigation extends Component {
                 {...props}
                 movieStore={movieStore}
                 searchStore={searchStore}
+              />
+            )}
+          </Stack.Screen>
+          <Stack.Screen name="MovieDetail" options={{title: 'Movie Detail'}}>
+            {props => (
+              <MovieDetailScreen
+                {...props}
+                movieStore={movieStore}
+                movie={props.route.params.movie}
               />
             )}
           </Stack.Screen>

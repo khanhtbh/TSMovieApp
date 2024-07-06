@@ -7,13 +7,13 @@
             "type": "reactnativedirect",
             "cwd": "${workspaceFolder}",
             "platform": "ios",
-            "target": "6B3D7371-6D6E-4601-A32F-F5139FD9E3AD"
+            "target": "device"
         },
         {
-            "name": "Debug Android",
-            "cwd": "${workspaceFolder}",
-            "type": "reactnative",
+            "name": "Debug Android Hermes",
             "request": "launch",
+            "type": "reactnativedirect",
+            "cwd": "${workspaceFolder}",
             "platform": "android"
         }
     ]

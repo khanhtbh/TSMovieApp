@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
-import {Movie} from '../../models/Movie';
+import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import {AppMovie} from '../../models/Movie';
 
 interface MovieCardProps {
-  movie: Movie;
+  movie: AppMovie;
+  onPress: () => void;
 }
 
 class MovieCard extends Component<MovieCardProps> {
@@ -12,8 +13,10 @@ class MovieCard extends Component<MovieCardProps> {
 
     return (
       <View style={styles.card}>
-        <Image source={{uri: movie.imgPoster}} style={styles.poster} />
-        <Text style={styles.title}>{movie.title}</Text>
+        <TouchableOpacity onPress={() => this.props.onPress()}>
+          <Image source={{uri: movie.imgPoster}} style={styles.poster} />
+          <Text style={styles.title}>{movie.title}</Text>
+        </TouchableOpacity>
       </View>
     );
   }
