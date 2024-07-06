@@ -14,13 +14,12 @@ interface HomeState {
 
 interface HomeProps {
   movieStore: MovieStore;
-  searchStore: SearchStore;
 }
 
-@inject('movieStore', 'searchStore')
+@inject('movieStore')
 @observer
 export default class HomeScreen extends Component<HomeProps, HomeState> {
-  constructor(props: {movieStore: MovieStore; searchStore: SearchStore}) {
+  constructor(props: {movieStore: MovieStore}) {
     super(props);
     this.handleSearch = this.handleSearch.bind(this);
     this.onRefresh = this.onRefresh.bind(this);
@@ -46,8 +45,7 @@ export default class HomeScreen extends Component<HomeProps, HomeState> {
 
   handleSearch(text: string) {
     console.log('searching' + text);
-    this.props.searchStore.setSearchQuery(text);
-    this.setState({searchInput: this.props.searchStore.searchQuery});
+    this.setState({searchInput: text});
     this.props.movieStore.search(this.state.searchInput);
   }
 
