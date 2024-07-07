@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
-import {AppMovie} from '../../models/Movie';
+import {Movie} from '../../models/Movie';
 
 interface MovieCardProps {
-  movie: AppMovie;
+  movie: Movie;
   onPress: () => void;
 }
 

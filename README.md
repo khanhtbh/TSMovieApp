@@ -1,79 +1,83 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Movie Application
 
-# Getting Started
+## Introduction
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+Mini movie application to help user search movie and check the detail information.
 
-## Step 1: Start the Metro Server
+This is a project to study and test out the React Native and Mobx architecture.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Features
 
-To start Metro, run the following command from the _root_ of your React Native project:
+| Screen Name | Screenshot |
+|:---|:---|
+| Home Screen | ![Home Screen](./Images/HomeScreen.png) |
+| Detail Screen | ![Detail Screen](./Images/MovieDetailScreen.png) |
 
+## Architecture
+
+![Architecture](./Images/AppArchitecture.png)
+
+## Development
+
+### I. Development IDE and Environment setup
+1. Install Android Studio
+2. Install NDK and CMake in Android Studio 
+3. Install Java 17
+4. Install Node.js - This application is developed with Node.JS v20
+5. Setup React Native environment - This application is developed with React Native v0.74
+   
+    Follow this link [React Native - Setup Environment](https://reactnative.dev/docs/environment-setup)
+
+1. Install ```yarn``` (**Optional**)
+2. Install XCode
+3. Install Visual Studio Code or any JavaScript editor
+   
+    Follow this link to setup VS Code [VS Code React Native - Setup Environment](https://marketplace.visualstudio.com/items?itemName=msjsdiag.vscode-react-native)
+
+### II. Run project
+1. Open the project in terminal
+2. Run this cmd to install dependencies
 ```bash
-# using npm
-npm start
+npm install
+```
+or
+```bash
+yarn install
+```
+3. Run this cmd to start the application on android
+```bash
+npx react-native run-android
+```
+4. Run these commands to start the application on ios
+```bash
+#from the root of the project, run this to install the pods
+cd ios && pod install
 
-# OR using Yarn
-yarn start
+npx react-native run-ios
 ```
 
-## Step 2: Start your Application
+### III. Setup Project with Movie SDK
+Movie SDK is created to encapsulate the business of searching and fetch movie data.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
+1. Pull source code of Movie SDK from [Movie SDK](https://github.com/khanhtbh/NodePackageWithMobx.git)
+2. Run this cmd to install dependencies
 ```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+npm install
 ```
-
-### For iOS
-
+or
 ```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+yarn install
 ```
+3. Build SDK with following command
+```bash
+yarn build
+```
+4. Checkout the source code of project Movie Application at this branch ```features/with-sdk```
+5. Install the SDK with following command for Movie Application
+```bash
+yarn add n-movie-sdk@file:[./path/to/sdk-folder]
+``` 
+6. Stop the Metro server if it's running and run the app with the instruction above
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+## License
+MIT

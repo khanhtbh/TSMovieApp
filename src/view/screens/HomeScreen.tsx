@@ -4,7 +4,6 @@ import {View, FlatList, StyleSheet} from 'react-native';
 import {SearchBar} from 'react-native-elements';
 import {inject, observer} from 'mobx-react';
 import MovieStore from '../../stores/MovieStore';
-import SearchStore from '../../stores/SearchStore';
 import MovieCard from '../components/MovieCard';
 import {Movie} from '../../models/Movie';
 
