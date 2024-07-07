@@ -18,6 +18,7 @@
     "mobx": "^6.13.0",
     "mobx-react": "^9.1.1",
     "mobx-react-lite": "^4.0.7",
+    "n-movie-sdk": "file:./../n-movie-sdk/",
     "react": "18.2.0",
     "react-native": "0.74.3",
     "react-native-elements": "^3.4.3",

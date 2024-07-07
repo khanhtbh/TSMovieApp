@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {View, Text, Image, FlatList, StyleSheet} from 'react-native';
 import {observer} from 'mobx-react';
-import {Movie, MovieDetail} from '../../models/Movie';
-import MovieStore from '../../stores/MovieStore';
+import {Movie, MovieDetail} from 'n-movie-sdk';
+import {MovieStore} from 'n-movie-sdk';
 import {ScrollView} from 'react-native';
 import {ActivityIndicator} from 'react-native';
 
